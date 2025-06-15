@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@radix-ui/react-label": "^2.1.7",
+    "@tabler/icons-react": "^3.34.0",
+    "aos": "^2.3.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.18.1",
+    "ldrs": "^1.1.7",
+    "motion": "^12.18.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
