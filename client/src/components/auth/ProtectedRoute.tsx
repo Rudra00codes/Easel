@@ -9,7 +9,7 @@ interface ProtectedRouteProps {
   requireAdmin?: boolean;
 }
 
-const ProtectedRoute = ({ children, requireAdmin = false }: ProtectedRouteProps) => {
+const ProtectedRoute = ({ requireAdmin = false }: ProtectedRouteProps) => {
   const location = useLocation();
   const { isAuthenticated, user, loading } = useSelector((state: RootState) => state.auth);
 

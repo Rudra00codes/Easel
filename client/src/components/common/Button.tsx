@@ -45,7 +45,7 @@ const Button = ({
 
   const content = (
     <>
-      {isLoading && <LoadingSpinner size="sm" className="mr-2" />}
+      {isLoading && <LoadingSpinner />}
       {!isLoading && leftIcon && <span className="mr-2">{leftIcon}</span>}
       {children}
       {!isLoading && rightIcon && <span className="ml-2">{rightIcon}</span>}

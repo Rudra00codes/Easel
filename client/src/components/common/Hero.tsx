@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback, memo } from "react";
+import { useEffect, useState, useRef, memo } from "react";
 import { GradualSpacing } from "../eldoraui/GradualSpacing";
 import { GitStarButton } from "../eldoraui/GitStarButton";
 import { SpotlightButton } from "../eldoraui/SpotlightButton";
@@ -6,7 +6,6 @@ import { CardContainer, CardBody, CardItem } from "../eldoraui/3d-card";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedTooltip } from "../eldoraui/AnimatedTooltip";
 import ShinyText from "../eldoraui/ShinyText";
-import { AuroraText } from "../eldoraui/aurora-text";
 
 const heading = "Experience Art\nLike Never\nBefore.";
 const perCharDelay = 0.1;
@@ -54,21 +53,6 @@ const Hero = memo(() => {
     }
   }, [showContent]);
 
-  const renderHeading = useCallback(() => {
-    const parts = heading.split("Art");
-    return (
-      <>
-        {parts[0]}
-        <AuroraText 
-          colors={["#FF0080", "#7928CA", "#0070F3", "#38bdf8"]}
-          className="inline-block"
-        >
-          Art
-        </AuroraText>
-        {parts[1]}
-      </>
-    );
-  }, []);
 
   return (
     <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden pt-20">

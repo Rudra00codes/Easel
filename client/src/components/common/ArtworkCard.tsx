@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 interface ArtworkCardProps {
@@ -12,7 +11,6 @@ interface ArtworkCardProps {
 }
 
 export default function ArtworkCard({
-  id,
   title,
   imageUrl,
   artist,
