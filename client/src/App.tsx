@@ -6,6 +6,7 @@ import AuthLayout from './components/layout/AuthLayout';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import { Mirage } from 'ldrs/react';
 import 'ldrs/react/Mirage.css';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Lazy load pages
 const Home = lazy(() => import('./pages/Home'));
@@ -49,6 +50,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
+      <SpeedInsights />
     </Suspense>
   );
 }
