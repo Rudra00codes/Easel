@@ -19,4 +19,27 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split React and ReactDOM into a separate chunk
+          react: ['react', 'react-dom'],
+          // Split vendor libraries (add more as needed)
+          vendor: [
+            '@reduxjs/toolkit',
+            'react-redux',
+            'react-router-dom',
+            '@headlessui/react',
+            '@tabler/icons-react',
+            'framer-motion',
+            'gsap',
+            'motion',
+            'ogl',
+            // add other large libraries here
+          ],
+        },
+      },
+    },
+  },
 }); 
