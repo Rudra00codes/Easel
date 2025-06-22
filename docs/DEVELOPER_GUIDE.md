@@ -31,7 +31,7 @@ JWT_EXPIRES_IN=7d
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 GOOGLE_CALLBACK_URL=http://localhost:5000/api/auth/google/callback
-FRONTEND_URL=http://localhost:5173
+FRONTEND_URL=http://localhost:3000
 ```
 
 #### Client (.env)
@@ -177,22 +177,14 @@ npm run test:e2e
 
 ## Deployment
 
-### Backend Deployment
-1. Build the application:
-   ```bash
-   npm run build
-   ```
+### Frontend (Vercel)
+- The frontend is deployed on Vercel. See [`deploy/vercel-deployment.md`](../deploy/vercel-deployment.md) for details.
+- Set environment variables in the Vercel dashboard (e.g., `VITE_API_URL`).
 
-2. Set production environment variables
-3. Deploy to your hosting platform
-
-### Frontend Deployment
-1. Build the application:
-   ```bash
-   npm run build
-   ```
-
-2. Deploy the `dist` directory to your hosting platform
+### Backend (External Hosting)
+- The backend (Node/Express) should be deployed to a service like Render, Railway, or Heroku.
+- Set all required environment variables in your host's dashboard (see code for required variables).
+- Update CORS and API URLs as needed for production.
 
 ## Best Practices
 

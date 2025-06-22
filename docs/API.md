@@ -2,8 +2,11 @@
 
 ## Base URL
 ```
-http://localhost:5000/api
+https://<your-backend-deployment-url>/api
 ```
+> In development: `http://localhost:5000/api`
+
+> In production, the backend may be hosted on Render, Railway, or similar. Update your frontend's `VITE_API_URL` accordingly.
 
 ## Authentication
 
@@ -251,3 +254,7 @@ The API implements rate limiting:
    - Never store tokens in localStorage
    - Use HTTPS in production
    - Validate all user input 
+
+## CORS & Frontend Integration
+- Ensure your backend allows requests from your deployed frontend domain (e.g., `https://easel.vercel.app`).
+- Set `FRONTEND_URL` in your backend environment variables to match your live frontend. 
