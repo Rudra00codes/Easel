@@ -15,6 +15,12 @@ export default {
       animation: {
         shine: 'shine 5s linear infinite',
       },
+      backgroundImage: {
+        'dot-pattern': "radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px)",
+      },
+      backgroundSize: {
+        'dot-pattern': '1rem 1rem',
+      },
       colors: {
         primary: {
           50: '#f0f9ff',

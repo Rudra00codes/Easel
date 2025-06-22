@@ -1,38 +1,18 @@
 import { useState } from "react";
-import { AuroraText } from "../components/eldoraui/aurora-text";
+import { GradualSpacing } from "../components/eldoraui/GradualSpacing";
 // import { SmoothCursor } from "../components/common/SmoothCursor"; // Comment out or remove this import
-import {
-  Navbar,
-  NavBody,
-  NavItems,
-  NavbarLogo,
-  NavbarButton,
-} from "../components/eldoraui/Navbar";
+
 import { VelocityScroll } from "../components/eldoraui/scrollbasedvelocity";
 import ShinyText from "../components/eldoraui/ShinyText";
 import { QuickStats } from "../components/common/QuickStats";
 import { AdvancedFilterModal } from "../components/common/AdvancedFilterModal";
 import { OrderDetailsModal } from "../components/common/OrderDetailsModal";
 import { CheckoutModal } from "../components/common/CheckoutModal";
-import { SpotlightButton } from "../components/eldoraui/SpotlightButton";
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-
-const navItems = [
-  { name: "Home", link: "/" },
-  { name: "Gallery", link: "/Gallery" },
-  { name: "Marketplace", link: "/Marketplace" },
-  { name: "About", link: "/about" },
-  { name: "Contact", link: "/contact" },
-];
 
 const Marketplace = () => {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
   const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
-
-  const navigate = useNavigate();
-  const { user } = useAuth();
 
   const openFilterModal = () => setIsFilterModalOpen(true);
   const closeFilterModal = () => setIsFilterModalOpen(false);
@@ -110,9 +90,9 @@ const Marketplace = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Background Gradient */}
-      <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+    <div className="relative h-full w-full bg-slate-950 overflow-hidden">
+      <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
+      <div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
 
       {/* <SmoothCursor 
         cursor={<SmoothCursor />}
@@ -123,32 +103,37 @@ const Marketplace = () => {
           restDelta: 0.001
         }}
       /> */}
-      <Navbar>
-        <NavBody>
-          <NavbarLogo />
-          <NavItems items={navItems} />
-          <NavbarButton href="/register" variant="primary">
-            Sign Up
-          </NavbarButton>
-        </NavBody>
-      </Navbar>
 
       {/* Hero Section */}
-      <section className="relative py-20 px-4">
+      <section className="relative py-20 px-4 pt-20">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <AuroraText colors={["#FF0080", "#7928CA", "#0070F3", "#38bdf8"]}>
-              Easel &nbsp;Marketplace
-            </AuroraText>
-          </h1>
+          <GradualSpacing
+            text="Easel Marketplace"
+            className="font-bold mb-6 text-center text-white text-5xl md:text-7xl"
+          />
           <ShinyText
             text="Discover, &nbsp;buy, &nbsp;and &nbsp;sell &nbsp;unique &nbsp;artworks &nbsp;from &nbsp;a &nbsp;global &nbsp;community of &nbsp;artists."
             className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto"
           />
-          <div className="flex flex-wrap justify-center gap-4">
-            <SpotlightButton text="Open Advanced Filters" onClick={openFilterModal} />
-            <SpotlightButton text="View Order Details (Demo)" onClick={openOrderModal} />
-            <SpotlightButton text="Open Checkout (Demo)" onClick={openCheckoutModal} />
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={openFilterModal}
+              className="px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Open Advanced Filters
+            </button>
+            <button
+              onClick={openOrderModal}
+              className="px-6 py-3 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-colors"
+            >
+              View Order Details (Demo)
+            </button>
+            <button
+              onClick={openCheckoutModal}
+              className="px-6 py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors"
+            >
+              Open Checkout (Demo)
+            </button>
           </div>
         </div>
       </section>

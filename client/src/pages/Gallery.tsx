@@ -1,15 +1,8 @@
 import { useState, useEffect } from "react";
 // import { motion } from "framer-motion";
 import { CardContainer, CardBody, CardItem } from "../components/eldoraui/3d-card";
-import { AuroraText } from "../components/eldoraui/aurora-text";
+import { GradualSpacing } from "../components/eldoraui/GradualSpacing";
 // import { SmoothCursor } from "../components/common/SmoothCursor";
-import {
-  Navbar,
-  NavBody,
-  NavItems,
-  NavbarLogo,
-  NavbarButton,
-} from "../components/eldoraui/Navbar";
 
 // Types
 interface Artwork {
@@ -22,14 +15,6 @@ interface Artwork {
   status: "available" | "sold";
   featured?: boolean;
 }
-
-const navItems = [
-  { name: "Home", link: "/" },
-  { name: "Gallery", link: "/Gallery" },
-  { name: "Marketplace", link: "/Marketplace" },
-  { name: "About", link: "/about" },
-  { name: "Contact", link: "/contact" },
-];
 
 const categories = [
   "All",
@@ -78,9 +63,9 @@ const Gallery = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen">
       {/* Background Gradient */}
-      <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+      {/* <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> */}
 
       {/* <SmoothCursor 
         cursor={<SmoothCursor />}
@@ -91,24 +76,14 @@ const Gallery = () => {
           restDelta: 0.001
         }}
       /> */}
-      <Navbar>
-        <NavBody>
-          <NavbarLogo />
-          <NavItems items={navItems} />
-          <NavbarButton href="/register" variant="primary">
-            Sign Up
-          </NavbarButton>
-        </NavBody>
-      </Navbar>
 
       {/* Hero Section */}
-      <section className="relative py-20 px-4">
+      <section className="relative py-20 px-4 pt-20">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <AuroraText colors={["#FF0080", "#7928CA", "#0070F3", "#38bdf8"]}>
-              Explore Our Gallery
-            </AuroraText>
-          </h1>
+          <GradualSpacing
+            text="Explore Our Gallery"
+            className="font-bold mb-6 text-center text-white text-5xl md:text-7xl"
+          />
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
             Discover unique artworks from talented artists around the world
           </p>
