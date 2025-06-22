@@ -1,6 +1,6 @@
-# MyArtVibe Client
+# Easel Client
 
-This is the frontend application for MyArtVibe, a platform for discovering and collecting unique artworks from talented artists across India.
+This is the frontend application for Easel, a platform for discovering and collecting unique artworks from talented artists across India.
 
 ## Features
 

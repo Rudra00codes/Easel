@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Suspense, lazy, useState, useEffect } from 'react';
+import { Suspense, lazy } from 'react';
 import Layout from './components/layout/Layout';
 import AuthLayout from './components/layout/AuthLayout';
 // import LoadingSpinner from './components/common/LoadingSpinner'; // Removed unused import
