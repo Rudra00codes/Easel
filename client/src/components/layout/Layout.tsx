@@ -35,7 +35,7 @@ const Layout = () => {
           <NavBody>
             <NavbarLogo />
             <NavItems items={navItems} />
-            <NavbarButton as={Link} href="/register" variant="primary">
+            <NavbarButton as={Link} to="/register" variant="primary">
               Sign Up
             </NavbarButton>
           </NavBody>
@@ -46,7 +46,7 @@ const Layout = () => {
             </MobileNavHeader>
             <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)}>
               <NavItems items={navItems} onItemClick={() => setIsOpen(false)} />
-              <NavbarButton as={Link} href="/register" variant="primary" className="w-full mt-4">
+              <NavbarButton as={Link} to="/register" variant="primary" className="w-full mt-4">
                 Sign Up
               </NavbarButton>
             </MobileNavMenu>
