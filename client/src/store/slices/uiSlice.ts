@@ -13,6 +13,7 @@ interface UIState {
     type: 'success' | 'error' | 'info' | 'warning';
     id: string;
   }[];
+  isSidebarOpen: boolean;
 }
 
 const initialState: UIState = {
@@ -24,6 +25,7 @@ const initialState: UIState = {
     data: null,
   },
   notifications: [],
+  isSidebarOpen: false,
 };
 
 const uiSlice = createSlice({

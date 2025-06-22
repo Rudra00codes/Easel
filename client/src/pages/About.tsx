@@ -1,4 +1,4 @@
-import { IconWorld, IconBuildingStore, IconUsers, IconBulb, IconCircleCheck } from '@tabler/icons-react';
+import { IconCircleCheck } from '@tabler/icons-react';
 import { SpotlightButton } from '../components/eldoraui/SpotlightButton';
 import { GradualSpacing } from '../components/eldoraui/GradualSpacing';
 import { CardContainer, CardBody, CardItem } from '../components/eldoraui/3d-card';
