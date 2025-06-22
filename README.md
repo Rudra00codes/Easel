@@ -55,12 +55,12 @@ flowchart LR
 <details>
   <summary>🖼️ Click to expand Screenshots</summary>
 
-  ![Home Page](screenshots/home.png)
-  ![Gallery Page](screenshots/gallery.png)
-  ![Marketplace](screenshots/marketplace.png)
-  ![Login/Register](screenshots/auth.png)
-  ![Admin Dashboard](screenshots/contact.png)
-  ![Mobile View](screenshots/about.png)
+  ![Home Page](./Screenshots/home.png)
+  ![Gallery Page](./Screenshots/gallery.png)
+  ![Marketplace](./Screenshots/marketplace.png)
+  ![Login/Register](./Screenshots/auth.png)
+  ![Admin Dashboard](./Screenshots/contact.png)
+  ![Mobile View](./Screenshots/about.png)
 
 </details>
 
