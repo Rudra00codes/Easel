@@ -30,7 +30,6 @@ export default defineConfig({
             '@reduxjs/toolkit',
             'react-redux',
             'react-router-dom',
-            '@headlessui/react',
             '@tabler/icons-react',
             'framer-motion',
             'gsap',
