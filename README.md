@@ -1,115 +1,117 @@
-# Easel
+<p align="center">
+  <img src="client/public/easel-icon.svg" alt="Easel Logo" width="120"/>
+</p>
 
-A Single-Artist Art Showcase and Sales Platform built with React, Node.js, and MongoDB.
+# 🎨 Easel
 
----
+A modern art gallery and marketplace web app built with React, Vite, and Tailwind CSS.
 
-## 🚀 Live Demo
-- **Frontend:** [https://easel.vercel.app](https://easel.vercel.app)
-- **Backend:** (Deployed separately, e.g., Render/Railway/Heroku)
-
----
-
-## Overview
-
-MyArtVibe is a modern web application designed to showcase and sell artworks. It provides a personalized digital storefront for artists to present their portfolio with high-resolution images, detailed descriptions, and seamless e-commerce functionality.
+[![Vercel Deployment](https://vercel.com/button)](https://easel-delta.vercel.app)
 
 ---
 
-## Features (Current)
-- Portfolio showcase (grid/list views)
-- Artwork detail pages
-- User authentication (email/password, Google OAuth)
-- Responsive design
-- Admin dashboard (artwork management)
-- Stripe integration (if enabled)
-- Advanced search/filtering
-- Modern UI with custom font and 3D Spline scene
-
-> **Note:** Some features (e.g., order tracking, analytics) may be in progress.
+## 📋 Table of Contents
+- [🗺️ System Architecture](#system-architecture)
+- [✨ Features](#features)
+- [🖼️ Screenshots](#screenshots)
+- [🚀 Getting Started](#getting-started)
+- [🌐 Deployment](#deployment)
+- [🛠️ Tech Stack](#tech-stack)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📄 License](#license)
 
 ---
 
-## Tech Stack
-- **Frontend:** React, TypeScript, Redux, TailwindCSS, Vite
-- **Backend:** Node.js, Express, TypeScript, MongoDB, JWT, Google OAuth
-- **Infra:** MongoDB Atlas, Stripe, Vercel (frontend), Render/Railway/Heroku (backend)
+## 🗺️ System Architecture
 
----
-
-## Getting Started (Development)
-
-### Prerequisites
-- Node.js (v18+)
-- MongoDB Atlas account
-- Google OAuth credentials
-- Stripe account (optional)
-
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/myartvibe.git
-   cd myartvibe
-   ```
-2. Install dependencies:
-   ```bash
-   cd server && npm install
-   cd ../client && npm install
-   ```
-3. Set up environment variables:
-   - Create `.env` files in both `server` and `client` directories (see code for required variables).
-4. Start the development servers:
-   ```bash
-   cd server && npm run dev
-   cd ../client && npm run dev
-   ```
-
----
-
-## Deployment
-See [`deploy/vercel-deployment.md`](deploy/vercel-deployment.md) for step-by-step deployment instructions to Vercel and backend hosting options.
-
----
-
-## Project Structure
-
-```
-myartvibe/
-├── client/                 # Frontend React application
-│   ├── src/
-│   │   ├── components/    # Reusable UI components
-│   │   ├── pages/        # Page components
-│   │   ├── store/        # Redux store configuration
-│   │   ├── services/     # API services
-│   │   └── utils/        # Utility functions
-│   └── public/           # Static assets
-│
-├── server/                # Backend Node.js application
-│   ├── src/
-│   │   ├── config/       # Configuration files
-│   │   ├── controllers/  # Route controllers
-│   │   ├── middleware/   # Custom middleware
-│   │   ├── models/       # Mongoose models
-│   │   ├── routes/       # API routes
-│   │   └── utils/        # Utility functions
-│   └── tests/            # Backend tests
-│
-└── docs/                 # Documentation
+```mermaid
+flowchart LR
+  User["👤 User"]
+  Browser["🌐 Browser (React/Vite)"]
+  Server["🖥️ Node.js/Express API"]
+  DB[("🗄️ MongoDB")]
+  User --> Browser
+  Browser --> Server
+  Server --> DB
+  Server --> Browser
 ```
 
-## API Documentation
-See [`docs/API.md`](docs/API.md) for up-to-date API endpoints and usage.
+---
+
+## ✨ Features
+
+- 🖼️ Browse and search the art gallery
+- 🔐 User authentication (register/login)
+- 📱 Responsive, modern UI
+- 🛒 Marketplace for buying art
+- 📊 Admin dashboard for artwork management
+- ⚡ Fast performance with Vite
+- ...and more!
 
 ---
 
-## Contributing, License, Support
+## 🖼️ Screenshots
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+<details>
+  <summary>🖼️ Click to expand Screenshots</summary>
 
-This project is licensed under the ISC License.
+  ![Home Page](screenshots/home.png)
+  ![Gallery Page](screenshots/gallery.png)
+  ![Marketplace](screenshots/marketplace.png)
+  ![Login/Register](screenshots/auth.png)
+  ![Admin Dashboard](screenshots/contact.png)
+  ![Mobile View](screenshots/about.png)
 
-For support, email support@myartvibe.com or open an issue in the repository.
+</details>
+
+---
+
+## 🚀 Getting Started
+
+```sh
+git clone https://github.com/Rudra00codes/Easel.git
+cd /client
+npm install
+npm run dev
+```
+
+> For backend setup, see `server/README.md` (if available).
+
+---
+
+## 🌐 Deployment
+
+- Deployed on [Vercel](https://vercel.com/)
+- See [deploy/vercel-deployment.md](deploy/vercel-deployment.md) for details
+- **Live Demo:** [easel-delta.vercel.app](https://easel-delta.vercel.app)
+
+---
+
+## 🛠️ Tech Stack
+
+- ⚛️ React
+- ⚡ Vite
+- 🎨 Tailwind CSS
+- 🗃️ Redux Toolkit
+- 🖼️ Framer Motion
+- 🛒 Axios
+- 🖥️ Node.js/Express (backend)
+- 🗄️ MongoDB (backend)
+
+---
+
+## 🙏 Acknowledgements
+
+- [Clash Display Font](https://www.fontshare.com/fonts/clash-display)
+- [Radix UI](https://www.radix-ui.com/)
+- [Vercel](https://vercel.com/)
+- [React Router](https://reactrouter.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- ...and all open-source contributors!
+
+---
+
+## 📄 License
+
+MIT
