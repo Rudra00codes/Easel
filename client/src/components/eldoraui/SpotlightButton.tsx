@@ -1,12 +1,15 @@
 "use client";
 
-export function SpotlightButton({ text = "Hover me", onClick }: { text?: string; onClick?: () => void }) {
+export function SpotlightButton({
+  text = "Hover me",
+  className,
+}: {
+  text?: string;
+  className?: string;
+}) {
   return (
-    <div style={{ transform: "none" }}>
-      <button 
-        className="group relative inline-block cursor-pointer rounded-xl bg-zinc-900 p-px font-semibold leading-6 text-white no-underline shadow-2xl shadow-zinc-900"
-        onClick={onClick}
-      >
+    <div style={{ transform: "none" }} className={className}>
+      <button className="group relative inline-block cursor-pointer rounded-xl bg-zinc-900 p-px font-semibold leading-6 text-white no-underline shadow-2xl shadow-zinc-900 w-full">
         <span className="absolute inset-0 overflow-hidden rounded-xl">
           <span className="absolute inset-0 rounded-xl bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
             {" "}
