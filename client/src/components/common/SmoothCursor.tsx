@@ -97,7 +97,7 @@ export const SmoothCursor = memo(({
   const lastUpdateTime = useRef(Date.now());
   const previousAngle = useRef(0);
   const accumulatedRotation = useRef(0);
-  const rafId = useRef<number>();
+  const rafId = useRef<number | undefined>(undefined);
 
   const cursorX = useSpring(0, springConfig);
   const cursorY = useSpring(0, springConfig);

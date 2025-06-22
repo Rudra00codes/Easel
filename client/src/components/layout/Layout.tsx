@@ -35,7 +35,7 @@ const Layout = () => {
           <NavBody>
             <NavbarLogo />
             <NavItems items={navItems} />
-            <NavbarButton as={Link} href="/register" variant="primary" className="w-full mt-4">
+            <NavbarButton as={Link} href="/register" variant="primary">
               Sign Up
             </NavbarButton>
           </NavBody>
