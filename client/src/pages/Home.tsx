@@ -107,7 +107,7 @@ export default function Home() {
       </div>
 
       {/* Velocity Scroll Section - Bottom */}
-      <div className="py-16" style={{ marginTop: "-90px" }}>
+      <div className="py-15"  style={{ marginBottom: "100px" }}>
         <VelocityScroll
           text="EXPLORE • CREATE • SHARE • COLLECT • INSPIRE • CONNECT • DISCOVER • EXPRESS • INNOVATE • TRANSFORM"
           default_velocity={2}
@@ -115,8 +115,8 @@ export default function Home() {
         />
       </div>
       {/* Featured Artworks Section */}
-      <div className="py-20 px-4 bg-black" style={{ marginTop: '-70px' }}>
-        <div className="text-center mb-12">
+      <div className="pt-5 pb-20 px-4 bg-black">
+        <div className="text-center mb-15" style={{ marginTop: '-70px' }}>
           <h2 className="text-4xl font-bold mb-4">
             <AuroraText colors={["#FF0080", "#7928CA", "#0070F3", "#38bdf8"]}>
               Featured &nbsp;Artworks
