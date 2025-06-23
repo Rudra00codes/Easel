@@ -55,7 +55,7 @@ const Hero = memo(() => {
 
 
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden pt-1 lg:pt-10">
       {/* Background Grid */}
       <div className="absolute inset-0 z-0">
         <div className="relative h-full w-full bg-transparent">
@@ -63,9 +63,9 @@ const Hero = memo(() => {
         </div>
       </div>
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-16 gap-10 mt-[-100px]">
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between px-6 py-8 lg:py-16 gap-10">
         {/* Left: Headings */}
-        <div className="flex-1 text-left max-w-5xl">
+        <div className="flex-1 flex flex-col items-center max-w-5xl">
           <GradualSpacing text={heading} className="mb-10 text-white" />
           <AnimatePresence>
             {showContent ? (
@@ -76,8 +76,8 @@ const Hero = memo(() => {
                 exit={{ opacity: 0, y: 32 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
               >
-                <ShinyText text="Discover a curated collection of artworks from emerging and established artists, and acquire your favorite pieces with ease." className="text-lg mb-8"/>
-                <div className="flex gap-12 mb-10">
+                <ShinyText text="Discover a curated collection of artworks from emerging and established artists, and acquire your favorite pieces with ease." className="text-lg mb-8 text-center"/>
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-10">
                   <SpotlightButton text="Get it now" />
                   <div className="flex items-center gap-4">
                     <GitStarButton />
@@ -93,7 +93,7 @@ const Hero = memo(() => {
           </AnimatePresence>
         </div>
         {/* Right: 3D Card Effect */}
-        <div className="flex-1 flex items-center justify-center min-h-[400px]">
+        <div className="hidden lg:flex flex-1 items-center justify-center min-h-[400px]">
           <CardContainer>
             <CardBody>
               <CardItem>
