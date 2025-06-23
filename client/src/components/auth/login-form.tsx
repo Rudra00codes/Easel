@@ -39,9 +39,9 @@ export function LoginForm({
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="overflow-hidden p-0 backdrop-blur-md bg-white/10 dark:bg-white/5 max-w-[1200px] w-full mx-auto">
-        <CardContent className="grid p-0 md:grid-cols-[400px_1fr]">
-          <form className="p-6 md:p-8 w-[400px] max-w-[400px] min-w-[300px]">
-            <div className="flex flex-col gap-6">
+        <CardContent className="grid p-0 lg:grid-cols-[400px_1fr]">
+          <div className="p-6 md:p-8">
+            <form className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
                 <h1 className="text-2xl font-bold">Welcome &nbsp;back</h1>
                 <p className="text-muted-foreground text-balance">
@@ -58,11 +58,11 @@ export function LoginForm({
                 />
               </div>
               <div className="grid gap-3">
-                <div className="flex items-center">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <Label htmlFor="password">Password</Label>
                   <a
                     href="#"
-                    className="ml-auto text-sm underline-offset-2 hover:underline"
+                    className="text-sm underline-offset-2 hover:underline"
                   >
                     Forgot your password?
                   </a>
@@ -97,9 +97,11 @@ export function LoginForm({
                   Sign up
                 </a>
               </div>
-            </div> 
-          </form>
-          <Spline scene="https://prod.spline.design/mUDbxhfKF3Q5kZUR/scene.splinecode" />
+            </form> 
+          </div>
+          <div className="hidden bg-background lg:block">
+            <Spline scene="https://prod.spline.design/mUDbxhfKF3Q5kZUR/scene.splinecode" />
+          </div>
         </CardContent>
       </Card>
       <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">

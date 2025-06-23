@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import {
   Renderer,
   Camera,
@@ -383,24 +383,24 @@ class Media {
     viewport,
   }: { screen?: ScreenSize; viewport?: Viewport } = {}) {
     if (screen) this.screen = screen;
-    if (viewport) {
-      this.viewport = viewport;
-      if (this.plane.program.uniforms.uViewportSizes) {
-        this.plane.program.uniforms.uViewportSizes.value = [
-          this.viewport.width,
-          this.viewport.height,
-        ];
-      }
+    if (viewport) this.viewport = viewport;
+
+    if (this.screen.width < 768) {
+      this.scale = this.screen.height / 1500 * 0.7;
+    } else {
+      this.scale = this.screen.height / 1500;
     }
-    this.scale = this.screen.height / 1500;
+
     this.plane.scale.y =
       (this.viewport.height * (900 * this.scale)) / this.screen.height;
     this.plane.scale.x =
       (this.viewport.width * (700 * this.scale)) / this.screen.width;
+
     this.plane.program.uniforms.uPlaneSizes.value = [
       this.plane.scale.x,
       this.plane.scale.y,
     ];
+
     this.padding = 2;
     this.width = this.plane.scale.x + this.padding;
     this.widthTotal = this.width * this.length;
@@ -689,27 +689,45 @@ interface CircularGalleryProps {
 
 export default function CircularGallery({
   items,
-  bend = 3,
+  bend: initialBend = 3,
   textColor = "#ffffff",
   borderRadius = 0.05,
-  font = "bold 30px Figtree",
+  font: initialFont = "bold 30px Figtree",
 }: CircularGalleryProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [bend, setBend] = useState(initialBend);
+  const [font, setFont] = useState(initialFont);
+  const appRef = useRef<App | null>(null);
+
   useEffect(() => {
-    if (!containerRef.current) return;
-    const app = new App(containerRef.current, {
-      items,
-      bend,
-      textColor,
-      borderRadius,
-      font,
-    });
-    return () => {
-      app.destroy();
+    const checkSize = () => {
+      if (window.innerWidth < 768) {
+        setBend(0);
+        setFont("bold 24px Figtree");
+      } else {
+        setBend(initialBend);
+        setFont(initialFont);
+      }
     };
+
+    checkSize();
+    window.addEventListener("resize", checkSize);
+
+    return () => window.removeEventListener("resize", checkSize);
+  }, [initialBend, initialFont]);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      if (appRef.current) {
+        appRef.current.destroy();
+      }
+      appRef.current = new App(containerRef.current, { items, bend, textColor, borderRadius, font });
+    }
+    return () => {
+        appRef.current?.destroy();
+        appRef.current = null;
+    }
   }, [items, bend, textColor, borderRadius, font]);
-  return <div
-    className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing"
-    ref={containerRef}
-  />;
+
+  return <div ref={containerRef} style={{ width: "100%", height: "100vh" }} />;
 }

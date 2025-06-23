@@ -36,7 +36,7 @@ const uiSlice = createSlice({
       state.theme = state.theme === 'light' ? 'dark' : 'light';
     },
     toggleSidebar: (state) => {
-      state.sidebarOpen = !state.sidebarOpen;
+      state.isSidebarOpen = !state.isSidebarOpen;
     },
     openModal: (state, action: PayloadAction<{ type: string; data?: any }>) => {
       state.modal = {
